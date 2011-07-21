@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NikSharp.Test", "NikSharp\UnitTests\NikSharp.Test\NikSharp.Test.csproj", "{4BBD4413-80CF-45F0-8ADF-D3F5BAB050B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C5E195CB-9488-46B5-9C5B-659F73859761}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET 4.0", ".NET 4.0", "{1097A422-EB66-4D9D-8DA3-4B93279C847D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET 3.5", ".NET 3.5", "{FD4160E9-24E9-47D4-A2F9-6514A49ED0BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NikSharp", "NikSharp\Source\NikSharp\NikSharp.csproj", "{6A1E79CA-BAA0-4766-B558-CA695C7FF190}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NikSharp.ClientProfile", "NikSharp\Source\NikSharp.ClientProfile\NikSharp.ClientProfile.csproj", "{8B33790D-3CBC-4B1C-9796-A6305365DD65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NikSharp.Net35", "NikSharp\Source\NikSharp.NET35\NikSharp.Net35.csproj", "{7BE58AA0-5683-4B65-BFA4-66A81DBA277D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NikSharp.Net35.ClientProfile", "NikSharp\Source\NikSharp.Net35.ClientProfile\NikSharp.Net35.ClientProfile.csproj", "{EED451AA-FA6C-4535-ABFF-AF8500677E19}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = NikSharp.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BBD4413-80CF-45F0-8ADF-D3F5BAB050B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BBD4413-80CF-45F0-8ADF-D3F5BAB050B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BBD4413-80CF-45F0-8ADF-D3F5BAB050B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BBD4413-80CF-45F0-8ADF-D3F5BAB050B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A1E79CA-BAA0-4766-B558-CA695C7FF190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1E79CA-BAA0-4766-B558-CA695C7FF190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1E79CA-BAA0-4766-B558-CA695C7FF190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1E79CA-BAA0-4766-B558-CA695C7FF190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B33790D-3CBC-4B1C-9796-A6305365DD65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B33790D-3CBC-4B1C-9796-A6305365DD65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B33790D-3CBC-4B1C-9796-A6305365DD65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B33790D-3CBC-4B1C-9796-A6305365DD65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BE58AA0-5683-4B65-BFA4-66A81DBA277D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE58AA0-5683-4B65-BFA4-66A81DBA277D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE58AA0-5683-4B65-BFA4-66A81DBA277D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE58AA0-5683-4B65-BFA4-66A81DBA277D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EED451AA-FA6C-4535-ABFF-AF8500677E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EED451AA-FA6C-4535-ABFF-AF8500677E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EED451AA-FA6C-4535-ABFF-AF8500677E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EED451AA-FA6C-4535-ABFF-AF8500677E19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4BBD4413-80CF-45F0-8ADF-D3F5BAB050B6} = {1097A422-EB66-4D9D-8DA3-4B93279C847D}
+		{6A1E79CA-BAA0-4766-B558-CA695C7FF190} = {1097A422-EB66-4D9D-8DA3-4B93279C847D}
+		{8B33790D-3CBC-4B1C-9796-A6305365DD65} = {1097A422-EB66-4D9D-8DA3-4B93279C847D}
+		{7BE58AA0-5683-4B65-BFA4-66A81DBA277D} = {FD4160E9-24E9-47D4-A2F9-6514A49ED0BD}
+		{EED451AA-FA6C-4535-ABFF-AF8500677E19} = {FD4160E9-24E9-47D4-A2F9-6514A49ED0BD}
+	EndGlobalSection
+EndGlobal

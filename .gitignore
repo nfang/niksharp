@@ -1,0 +1,12 @@
+# Ignore files created by Windows
+Thumbs.db
+# Ignore files created by Visual Studio
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+obj/
+TestResults/
+*.cache
+*.suo
+*.vsmdi
+*.vspscc

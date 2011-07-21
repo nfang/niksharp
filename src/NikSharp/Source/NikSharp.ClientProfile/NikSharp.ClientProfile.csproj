@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8B33790D-3CBC-4B1C-9796-A6305365DD65}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NikSharp.ClientProfile</RootNamespace>
+    <AssemblyName>NikSharp.ClientProfile</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Hammock.ClientProfile">
+      <HintPath>..\..\..\SharedBinaries\Hammock\.NET 4.0\Hammock.ClientProfile.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SharedBinaries\Newtonsoft.Json\.NET 4.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\NikSharp\Extension\RestResponseExt.cs">
+      <Link>Extension\RestResponseExt.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\GlobalVars.cs">
+      <Link>GlobalVars.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\Enums\PartOfSpeech.cs">
+      <Link>Model\Enums\PartOfSpeech.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\Enums\RelationshipType.cs">
+      <Link>Model\Enums\RelationshipType.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\Enums\SourceDictionary.cs">
+      <Link>Model\Enums\SourceDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\Enums\WordnikEnums.cs">
+      <Link>Model\Enums\WordnikEnums.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikAudio.cs">
+      <Link>Model\WordnikAudio.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikDefinition.cs">
+      <Link>Model\WordnikDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikError.cs">
+      <Link>Model\WordnikError.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikExample.cs">
+      <Link>Model\WordnikExample.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikFrequency.cs">
+      <Link>Model\WordnikFrequency.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikHyphenation.cs">
+      <Link>Model\WordnikHyphenation.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikNewWordList.cs">
+      <Link>Model\WordnikNewWordList.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikPhrases.cs">
+      <Link>Model\WordnikPhrases.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikPronunciation.cs">
+      <Link>Model\WordnikPronunciation.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikRelated.cs">
+      <Link>Model\WordnikRelated.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikResponseModel.cs">
+      <Link>Model\WordnikResponseModel.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikSearchResult.cs">
+      <Link>Model\WordnikSearchResult.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikToken.cs">
+      <Link>Model\WordnikToken.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikTokenStatus.cs">
+      <Link>Model\WordnikTokenStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikUser.cs">
+      <Link>Model\WordnikUser.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikWord.cs">
+      <Link>Model\WordnikWord.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikWordList.cs">
+      <Link>Model\WordnikWordList.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikWordListWord.cs">
+      <Link>Model\WordnikWordListWord.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Model\WordnikWordOfTheDay.cs">
+      <Link>Model\WordnikWordOfTheDay.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Serialization\JsonNetSerializer.cs">
+      <Link>Serialization\JsonNetSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Service\IWordnikService.cs">
+      <Link>Service\IWordnikService.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Service\WordnikService.Account.cs">
+      <Link>Service\WordnikService.Account.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Service\WordnikService.cs">
+      <Link>Service\WordnikService.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Service\WordnikService.Word.cs">
+      <Link>Service\WordnikService.Word.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Service\WordnikService.WordList.cs">
+      <Link>Service\WordnikService.WordList.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Service\WordnikService.Words.cs">
+      <Link>Service\WordnikService.Words.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Utility\PathUtil.cs">
+      <Link>Utility\PathUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\NikSharp\Utility\ValidationUtil.cs">
+      <Link>Utility\ValidationUtil.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
