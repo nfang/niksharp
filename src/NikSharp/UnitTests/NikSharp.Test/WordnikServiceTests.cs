@@ -7,6 +7,7 @@ using NikSharp.Model.Enums;
 using System.Net;
 using System.Diagnostics;
 using NikSharp.Model;
+using System.Configuration;
 
 namespace NikSharp.Test
 {
@@ -15,16 +16,35 @@ namespace NikSharp.Test
     {
         private WordnikService _service;
 
+        private static string apiKey = "";
+        private static string username = "";
+        private static string password = "";
+        
         public WordnikServiceTests()
         {
-            _service = new WordnikService("Wordnik_API_Key");
+            apiKey = ConfigurationManager.AppSettings["wordnikApiKey"];
+            username = ConfigurationManager.AppSettings["wordnikUsername"];
+            password = ConfigurationManager.AppSettings["wordnikPassword"];
+        }
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            if (string.IsNullOrWhiteSpace(apiKey) ||
+                string.IsNullOrWhiteSpace(username) ||
+                string.IsNullOrWhiteSpace(password))
+            {
+                throw new ConfigurationErrorsException("API key, username, or password is not configured.");
+            }
+
+            _service = new WordnikService(apiKey);
         }
 
         #region /account
         [TestMethod]
         public void Authenticate_ExistingUser_ReturnNotNull()
         {
-            var response = _service.Authenticate("username", "password");
+            var response = _service.Authenticate(username, password);
             Assert.IsNotNull(_service.LastHttpResponse);
             Assert.AreEqual(HttpStatusCode.OK, _service.LastHttpResponse.StatusCode);
             Assert.IsNotNull(response);
@@ -50,17 +70,17 @@ namespace NikSharp.Test
         [TestMethod]
         public void GetUser_ReturnNotNull()
         {
-            _service.Authenticate("username", "password");
+            _service.Authenticate(username, password);
             var response = _service.GetUser();
             Assert.AreEqual(HttpStatusCode.OK, _service.LastHttpResponse.StatusCode);
             Assert.IsNotNull(response);
-            Assert.AreEqual("username", response.Username);
+            Assert.AreEqual(username, response.Username);
         }
 
         [TestMethod]
         public void GetUserWordList_ValidParams_ReturnNotNull()
         {
-            _service.Authenticate("username", "password");
+            _service.Authenticate(username, password);
             var response = _service.GetUserWordList();
             Assert.AreEqual(HttpStatusCode.OK, _service.LastHttpResponse.StatusCode);
             Assert.IsNotNull(response);
@@ -223,14 +243,14 @@ namespace NikSharp.Test
             Assert.IsNotNull(response);
             Assert.IsTrue(response.SearchResults.Count <= 2);
             Assert.AreEqual(HttpStatusCode.OK, _service.LastHttpResponse.StatusCode);
-        } 
+        }
         #endregion
 
         #region /wordList
         [TestMethod]
         public void GetWordList_ValidParam_ReturnNotNull()
         {
-            _service.Authenticate("username", "password");
+            _service.Authenticate(username, password);
             var response = _service.GetWordList("computer-words--1");
             Assert.IsNotNull(response);
         }
@@ -238,7 +258,7 @@ namespace NikSharp.Test
         [TestMethod]
         public void DeleteWords_ValidParam_CountChanges()
         {
-            _service.Authenticate("username", "password");
+            _service.Authenticate(username, password);
             var nOldCount = _service.GetWordList("computer-words--1").NumberWordsInList;
             _service.DeleteWords("computer-words--1", new string[] { "iMac" });
             Assert.IsNull(_service.LastError);
@@ -249,7 +269,7 @@ namespace NikSharp.Test
         [TestMethod]
         public void AddWords_ValidParam_CountChanges()
         {
-            _service.Authenticate("username", "password");
+            _service.Authenticate(username, password);
             var nOldCount = _service.GetWordList("computer-words--1").NumberWordsInList;
             _service.AddWords("computer-words--1", new string[] { "iMac" });
             Assert.IsNull(_service.LastError);
@@ -260,7 +280,7 @@ namespace NikSharp.Test
         [TestMethod]
         public void CreateWordList_ValidParam_CountChanges()
         {
-            _service.Authenticate("username", "password");
+            _service.Authenticate(username, password);
             var response = _service.CreateWordList("Insurance", "Words about insurance", WordListType.Private);
             Assert.IsNotNull(response);
             Assert.AreEqual(response.Name, "Insurance");
@@ -269,12 +289,12 @@ namespace NikSharp.Test
         [TestMethod]
         public void DeleteWordList_ValidParam_CountChanges()
         {
-            _service.Authenticate("username", "password");
+            _service.Authenticate(username, password);
             var nOldCount = _service.GetUserWordList().Count();
             _service.DeleteWordList("insurance");
             var nNewCount = _service.GetUserWordList().Count();
             Assert.AreEqual(nOldCount - 1, nNewCount);
-        } 
+        }
         #endregion
     }
 }
